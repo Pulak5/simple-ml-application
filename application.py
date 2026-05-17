@@ -8,7 +8,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def home():
-    return "ML App Running"
+    return "This is home page"
 
 
 if __name__ == "__main__":
