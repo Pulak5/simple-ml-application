@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoker Classification</title>
+
+    <style>
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f4f4f4;
+        }
+
+        .container{
+            width:40%;
+            margin:50px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:20px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:green;
+            color:white;
+            border:none;
+            cursor:pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Smoker Classification</h2>
+
+    <form action="/predict_smoker" method="POST">
+
+        <label>Total Bill</label>
+        <input type="number" step="any" name="total_bill" required>
+
+        <label>Tip Amount</label>
+        <input type="number" step="any" name="tip" required>
+
+        <label>Sex</label>
+        <select name="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <label>Day</label>
+        <select name="day">
+            <option value="Thur">Thur</option>
+            <option value="Fri">Fri</option>
+            <option value="Sat">Sat</option>
+            <option value="Sun">Sun</option>
+        </select>
+
+        <label>Time</label>
+        <select name="time">
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
+
+        <label>Size</label>
+        <input type="number" name="size" required>
+
+        <button type="submit">
+            Predict Smoker
+        </button>
+
+    </form>
+
+</div>
+<h2>
+    The predicted class is {{result}} for Smoker.
+</h2>
+<a href="/">
+            Go to Home page.
+        </a>
+</body>
+</html>
